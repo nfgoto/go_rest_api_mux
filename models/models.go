@@ -9,27 +9,23 @@ type Book struct {
 	Author	*Author `json: "author"`
 }
 
-// Library books
-var Library []Book
+// Library book slice
+var Library = []Book{
+	Book{
+		ID: "1",
+		Title: "Kubwa Kiti",
+		Isbn: "65431",
+		Author: &Author {
+			ID: "1",
+			Firstname: "Florian",
+			Lastname: "GOTO",
+		},
+	},
+}
 
 // Author struct (model)
 type Author struct {
 	ID		string `json: "id"`
 	Firstname	string `json: "firstname"`
 	Lastname	string `json: "lastname"`
-}
-
-func main() {
-	// Mock data
-	Library = append( Library,
-		Book{
-			ID: "1",
-			Title: "Kubwa Kiti",
-			Isbn: "65431",
-			Author: &Author {
-				ID: "1",
-				Firstname: "Florian",
-				Lastname: "GOTO",
-			},
-		})
 }
